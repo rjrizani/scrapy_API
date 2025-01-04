@@ -8,5 +8,8 @@ import scrapy
 
 class BuyglassesItem(scrapy.Item):
     # define the fields for your item here like:
-    product_name = scrapy.Field()
+    name = scrapy.Field()
+    url = scrapy.Field()
+    price_final = scrapy.Field()
+    
     

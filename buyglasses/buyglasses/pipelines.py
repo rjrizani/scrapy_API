@@ -10,4 +10,14 @@ from itemadapter import ItemAdapter
 
 class BuyglassesPipeline:
     def process_item(self, item, spider):
+        item['price_final'] = self.remove_rupiah_format(item['price_final'])
         return item
+    
+    def remove_rupiah_format(self, amount):
+        # Remove "Rp" prefix
+        amount = amount.replace("Rp", "")
+        
+        # Remove dot (".") separator
+        amount = amount.replace(".", "")
+        
+        return amount
